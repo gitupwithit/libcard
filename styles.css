@@ -24,10 +24,10 @@
 .barcode { 
   position:absolute; 
   cursor: grab;
-  cursor: -webkit-grab;
-  z-index: 1; 
+	cursor: -webkit-grab;
+  z-index: 1;
   top: 130px; 
-  left: 40px;
+  left: 40px; 
 }
 
 .barcode.active {
