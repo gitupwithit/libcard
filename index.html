@@ -1,11 +1,10 @@
-
+<!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Library Card Maker</title>
   <link rel="stylesheet" href="styles.css">
   </head>
-
 
 <html>
 <body>
@@ -15,10 +14,19 @@ Card Number: <input type="number" id="cardNumber" value="00000000000000">
 <button type="button" onclick="submitCardNumber()">Submit</button>
 </p>
 
-<div class="container">
-  <img class="image1" src="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg" alt="arthur library card"/>
-  <img class="image2" id="bc" src="https://www.barcodesinc.com/generator/image.php?code=00000000000000&style=197&type=C128B&width=250&height=60&xres=1&font=3"/>
+<p>
+  Image: <input type="url" id="userImage" value="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg">
+  <button type="button" onclick="submitUserImage()">Submit</button>
+</p>
+
+<div class="mover">
+  <img class="cardImage" id="ui" src="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg" width="322px" height="209px" alt="library card background image"/>
+
+  <img class="barcode" id="bc" src="https://www.barcodesinc.com/generator/image.php?code=00000000000000&style=197&type=C128B&width=250&height=60&xres=1&font=3" alt="barcode"/>
+ </div>
 </div>
+
+
 
 </body>
 
