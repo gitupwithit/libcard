@@ -15,7 +15,7 @@ function mouseDown(e) {
 }
 
 function mouseUp(e) {
-  clickOnBCn = false;
+  clickOnBC = false;
   bc.classList.remove('active');
 }
 
