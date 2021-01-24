@@ -8,25 +8,25 @@ addEventListener('mouseup', mouseUp);
 addEventListener('mousemove', mouseMove);
 
 function mouseDown(e) {
-  mouseIsDown = true;
+  clickOnBC = true;
   e.preventDefault();
   bc.classList.add('active');
-  console.log("bc clicked");
 }
 
 function mouseUp(e) {
-  mouseIsDown = false;
+  clickOnBC = false;
+  console.log(clickOnBC);
   bc.classList.remove('active');
 }
 
 function mouseMove(e) {
-  if (mouseIsDown == false) {
-    return;
-  }
+  if (clickOnBC == true) {
+
   currentX = e.pageX;
   currentY = e.pageY;
   bc.style.left = currentX + 'px';
   bc.style.top = currentY + 'px';
+  }
 }
 
 function submitCardNumber(cardNumber) {
