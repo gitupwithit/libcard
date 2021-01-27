@@ -1,16 +1,17 @@
-.container { 
-  position:relative; 
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.image1 { position:absolute; 
-  top: 0px; 
-  left: 0px; 
-  z-index: 1; 
-  width: 512px;
-} 
-
-.image2 { position:absolute; 
-  top: 240px; 
-  left: 200px; 
-  z-index: 3;
+#image {
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
 }

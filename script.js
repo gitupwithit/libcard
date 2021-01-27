@@ -1,5 +1,15 @@
-function submitCardNumber(cardNumber) {
-  var cardNumber = document.getElementById("cardNumber").value;
-  console.log(cardNumber);
-  document.getElementById("bc").src = "https://www.barcodesinc.com/generator/image.php?code=" + cardNumber + "&style=197&type=C128B&width=250&height=60&xres=1&font=3";
+addEventListener('mousedown', mouseDown);
+
+function mouseDown() {
+    if (document.getElementById('image').src == "oneEternityLater_inverted.jpg") {
+        document.getElementById('image').src="oneEternityLater.jpg";
+        console.log('not inverted');
+    }
+        
+    if (document.getElementById('image').src == "oneEternityLater.jpg") {
+        document.getElementById('image').src="oneEternityLater_inverted.jpg";
+        console.log('inverted');
+    }
+
 }
+
