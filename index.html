@@ -1,11 +1,10 @@
-
+<!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Library Card Maker</title>
   <link rel="stylesheet" href="styles.css">
   </head>
-
 
 <html>
 <body>
@@ -15,9 +14,24 @@ Card Number: <input type="number" id="cardNumber" value="00000000000000">
 <button type="button" onclick="submitCardNumber()">Submit</button>
 </p>
 
-<div class="container">
-  <img class="image1" src="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg" alt="arthur library card"/>
-  <img class="image2" id="bc" src="https://www.barcodesinc.com/generator/image.php?code=00000000000000&style=197&type=C128B&width=250&height=60&xres=1&font=3"/>
+<p>
+  Image: <input type="url" id="userImage" value="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg">
+  <button type="button" onclick="submitUserImage()">Submit</button>
+</p>
+
+<div class="mover">
+  <img class="cardImage" id="ui" src="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg" width="322px" height="209px" alt="library card background image"/>
+
+  <img class="barcode" id="bc" src="https://barcode.tec-it.com/barcode.ashx?data=00000000000000&code=&multiplebarcodes=false&translate-esc=true&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&codepage=Default&qunit=Mm&quiet=0" width="175px" height="45px"alt="barcode"/>
+ </div>
+</div>
+
+<div class="link">
+<p>
+  <img src="angryArthur.jpg" width="50px" height="50px" alt="angry arthur"/>
+  <A HREF = "broken.html">Click here if this isn't working</A>
+
+</p>
 </div>
 
 </body>

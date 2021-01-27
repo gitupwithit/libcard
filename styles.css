@@ -1,16 +1,41 @@
+
+
+
 .container { 
-  position:relative; 
+  position:absolute; 
+  z-index: 3;
 }
 
-.image1 { position:absolute; 
+.mover {
+  position:relative; 
   top: 0px; 
   left: 0px; 
-  z-index: 1; 
-  width: 512px;
+  z-index: 2;
+}
+
+.cardImage { 
+  position:absolute; 
+  top: 0px; 
+  left: 0px; 
+  z-index: 1;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
 } 
 
-.image2 { position:absolute; 
-  top: 240px; 
-  left: 200px; 
-  z-index: 3;
+.barcode { 
+  position:absolute; 
+  cursor: grab;
+	cursor: -webkit-grab;
+  z-index: 1;
+  top: 150px; 
+  left: 110px; 
+}
+
+.barcode.active {
+  cursor: grabbing;
+	cursor: -webkit-grabbing;
+}
+
+.link {
+  margin-top: 265px;
 }
