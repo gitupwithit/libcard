@@ -8,19 +8,19 @@ addEventListener('mouseup', mouseUp);
 addEventListener('mousemove', mouseMove);
 
 function mouseDown(e) {
-  mouseIsDown = true;
+  clickOnBC = true;
   e.preventDefault();
   bc.classList.add('active');
   console.log("bc clicked");
 }
 
 function mouseUp(e) {
-  mouseIsDown = false;
+  clickOnBC = false;
   bc.classList.remove('active');
 }
 
 function mouseMove(e) {
-  if (mouseIsDown == false) {
+  if (clickOnBC == false) {
     return;
   }
   currentX = e.pageX;
