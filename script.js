@@ -1,14 +1,17 @@
 addEventListener('mousedown', mouseDown);
+var inv = false
 
 function mouseDown() {
-    if (document.getElementById('image').src == "oneEternityLater_inverted.jpg") {
+    if (inv == false) {
         document.getElementById('image').src="oneEternityLater.jpg";
         console.log('not inverted');
+        inv = true;
     }
         
-    if (document.getElementById('image').src == "oneEternityLater.jpg") {
+    else if (inv == true) {
         document.getElementById('image').src="oneEternityLater_inverted.jpg";
         console.log('inverted');
+        inv = false;
     }
 
 }
