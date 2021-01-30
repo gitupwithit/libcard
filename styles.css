@@ -1,16 +1,64 @@
-.container { 
-  position:relative; 
+@font-face { font-family: BarCode; src: url('LibreBarcode128-Regular.ttf'); } 
+@font-face { font-family: bcText; src: url('OpenSans-Regular.ttf'); } 
+
+body {
+  background-color: white;
 }
 
-.image1 { position:absolute; 
+.cardImage { 
+  position: relative; 
   top: 0px; 
   left: 0px; 
-  z-index: 1; 
-  width: 512px;
+  z-index: 1;
+ /* border: 2px solid rgb(0, 0, 0); */
+  border-radius: 10px; 
+  z-index: 1;
 } 
 
-.image2 { position:absolute; 
-  top: 240px; 
-  left: 200px; 
+/*
+.barcodeContainer {
+  position: relative; 
+  cursor: grab;
+	cursor: -webkit-grab;
+  top: 50px; 
+  left: 106px; 
+  width: 217px;
+  height: 55px;
+  border: .5px solid rgb(0, 0, 0);
+  background-color: white;
+  border-radius: 0px;
+  z-index: 2;
+  padding: 10px, 10px, 0px, 10px;
+}
+*/
+
+.barcode { 
+  position: relative;
+  cursor: grab;
+	cursor: -webkit-grab;
+/*  font-family: BarCode; 
+  font-size: 45px;
+  line-height: 100%; */
+  width: 225px;
+  height: 55px;
+  top: -120px;
+  left: 80px;
+  text-align: center;
+  background-color:white;
   z-index: 3;
 }
+
+.bc# {
+  position: relative;
+  z-index: 4;
+}
+
+.barcode.active {
+  cursor: grabbing;
+	cursor: -webkit-grabbing;
+}
+
+.link {
+  position: relative;
+}
+
