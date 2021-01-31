@@ -11,12 +11,12 @@
 <body>
 
 <p>
-Card Number: <input type="number" id="cardNumber" value="00000000000000">
+Enter your card number: <input type="number" id="cardNumber" value="00000000000000">
 <button type="button" onclick="submitCardNumber()">Submit</button>
 </p>
 
 <p>
-  Image: <input type="url" id="userImage" value="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg">
+  Paste link to image here: <input type="url" id="userImage" value="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg">
   <button type="button" onclick="submitUserImage()">Submit</button>
 </p>
 
@@ -31,12 +31,26 @@ Card Number: <input type="number" id="cardNumber" value="00000000000000">
             <span id="bold" style="font-size: 15px; font-weight: bold;"> 0000</span> </p>
         </div> 
       </div>
-      
 </div>
 
 <div class="link">
-  <p> <button type="button" onclick="setBroken()">Click here if this is broken again</button></p>
+  <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 12px;">(pro-tip: move the barcode)</p>
+  <p> <button onclick="window.print()">Print this page</button></p>
+  <p> <button type="button" onclick="setBroken()">Click here if this is broken</button></p>
 </div>
+
+<div class="notes">
+<p>notes: </p>
+<p>-v8 (jan 31 2021)</p>
+<p>-barcode is generated with a font called <a href="https://fonts.google.com/specimen/Libre+Barcode+39" target="_blank">LibreBarcode39 </a></p> 
+<p>-sadly, these card designs won't work with Apple Wallet .. not possible, I tried D: (there are free apps that will add the basic library barcode to your device's wallet. You can uninstall the app after and the barcode will still work)</p>
+<p>to do: make the print function print the card and not the entire page</p>
+<p>to do: allow uploading of images instead of just image links</p>
+<p>to do: allow formatting (crop/position/zoom etc) of images .. haha .. no</p>
+<p>if you want to contribute, get in touch! g9f605-=@=-hot-=-mail-=dot=-calm</p>
+</div>
+
+
 
 </body>
 
