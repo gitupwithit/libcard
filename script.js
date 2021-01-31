@@ -32,6 +32,7 @@ function mouseMove(e) {
 
 function submitCardNumber(){
   var newCardNumber = document.getElementById('cardNumber').value;
+  document.getElementById('bc').innerHTML = newCardNumber
   var newCardNumberString = newCardNumber.toString();
   document.getElementById('bcnum').innerHTML = newCardNumberString.slice(0,5);
   document.getElementById('mid').innerHTML = ' '  + newCardNumberString.slice(5,10);
