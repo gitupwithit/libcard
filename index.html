@@ -1,11 +1,11 @@
-
+<!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Library Card Maker</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer=true></script>
   </head>
-
 
 <html>
 <body>
@@ -15,13 +15,29 @@ Card Number: <input type="number" id="cardNumber" value="00000000000000">
 <button type="button" onclick="submitCardNumber()">Submit</button>
 </p>
 
-<div class="container">
-  <img class="image1" src="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg" alt="arthur library card"/>
-  <img class="image2" id="bc" src="https://www.barcodesinc.com/generator/image.php?code=00000000000000&style=197&type=C128B&width=250&height=60&xres=1&font=3"/>
+<p>
+  Image: <input type="url" id="userImage" value="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg">
+  <button type="button" onclick="submitUserImage()">Submit</button>
+</p>
+
+<div class="cardImage">
+  <img class="cardImage" id="ui" src="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg" width="322px" height="206px" alt="library card background image"/>
+<!----    <div class="barcodeContainer" id="bcContainer"> -->
+      <div class="barcode" id="barcode">
+        <p style="font-family: Barcode; font-size: 28px; line-height: 46px;" id="bc">*00000000000000*</p>  
+        <div id="bc#">
+          <p style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin-top: -45px; text-align: center;">
+            <span id="bcnum">00000 </span><span id="mid"> 00000</span>
+            <span id="bold" style="font-size: 15px; font-weight: bold;"> 0000</span> </p>
+        </div> 
+      </div>
+      
+</div>
+
+<div class="link">
+  <p> <button type="button" onclick="setBroken()">Click here if this is broken again</button></p>
 </div>
 
 </body>
 
-<script src="script.js"></script>
- 
 </html>
