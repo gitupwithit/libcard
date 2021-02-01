@@ -1,11 +1,11 @@
-
+<!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Library Card Maker</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
   </head>
-
 
 <html>
 <body>
@@ -15,13 +15,104 @@ Card Number: <input type="number" id="cardNumber" value="00000000000000">
 <button type="button" onclick="submitCardNumber()">Submit</button>
 </p>
 
-<div class="container">
-  <img class="image1" src="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg" alt="arthur library card"/>
-  <img class="image2" id="bc" src="https://www.barcodesinc.com/generator/image.php?code=00000000000000&style=197&type=C128B&width=250&height=60&xres=1&font=3"/>
+<p>
+  Image: <input type="url" id="userImage" value="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg">
+  <button type="button" onclick="submitUserImage()">Submit</button>
+</p>
+
+<div class="cardImage">
+  <img class="cardImage" id="ui" src="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg" width="322px" height="206px" alt="library card background image"/>
+<!----    <div class="barcodeContainer" id="bcContainer"> -->
+      <div class="barcode" id="barcode">
+        
+        <img id="barcode2"/>
+        
+          <div id="bc#">
+            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin-top: -15px; text-align: center;">
+              <span id="bcnum">00000 </span><span id="mid"> 00000</span>
+              <span id="bold" style="font-size: 15px; font-weight: bold;"> 0000</span> </p>
+          </div> 
+      </div>
+      
+</div>
+
+<div class="link">
+  <button onclick="window.print()" target="_blank">Print this page</button>
+ <button type="button" onclick="setBroken()">Click here if this is broken</button></p>
+</div>
+
+<div class="notes">
+  <p>notes:</p>
+  <p>v9 (jan 31 2021)</p>
+  <p>- this version uses the <a href="https://github.com/lindell/JsBarcode">jsbarcode library </a> </p>
+  <p> - uses CODE128 style barcodes. libraries are supposed to use Codabar format, but I couldn't get them to scan??</p>
+    <p>- to do: uploading images </p>
+      <p>- print just the card, not the whole page</p>
+      <p> - if you want to help, get in touch! g9f605++@++hot++mail++dot++calm</p>
 </div>
 
 </body>
 
-<script src="script.js"></script>
- 
+<script>
+
+let clickOnBC = false;
+let currentX;
+let currentY;
+var cardNumber
+const bc = document.getElementById("barcode");
+
+bc.addEventListener('mousedown', mouseDown);
+addEventListener('mouseup', mouseUp);
+addEventListener('mousemove', mouseMove);
+
+function mouseDown(e) {
+  clickOnBC = true;
+  e.preventDefault();
+  bc.classList.add('active');
+  clickOnBC = true;
+}
+
+function mouseUp(e) {
+  clickOnBC = false;
+  bc.classList.remove('active');
+}
+
+function mouseMove(e) {
+  if (clickOnBC == false) {
+    return;
+  }
+  currentX = e.pageX;
+  currentY = e.pageY;
+  bc.style.left = currentX - 80 + 'px';
+  bc.style.top = currentY -370 + 'px';
+}
+
+function submitCardNumber(){
+  var newCardNumber = document.getElementById('cardNumber').value;
+  var newCardNumberString = newCardNumber.toString();
+  document.getElementById('bcnum').innerHTML = newCardNumberString.slice(0,5);
+  document.getElementById('mid').innerHTML = ' '  + newCardNumberString.slice(5,10);
+  document.getElementById('bold').innerHTML = ' ' + newCardNumberString.slice(10,14);
+  var element = document.getElementById("barcode2");
+  JsBarcode(element, newCardNumber, {
+    format: "CODE128",
+    width:2,
+    height:30,
+    displayValue: false
+    }
+  );
+}
+
+function submitUserImage(userImage) {
+  var userImage = document.getElementById("userImage").value;
+  document.getElementById("ui").src = userImage;
+}
+
+function setBroken() {
+  broken = true;
+  window.location = "broken.html"
+}
+
+</script>
+
 </html>
