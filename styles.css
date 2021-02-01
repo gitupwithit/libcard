@@ -1,4 +1,3 @@
-@font-face { font-family: BarCode; src: url('LibreBarcode128-Regular.ttf'); } 
 @font-face { font-family: bcText; src: url('OpenSans-Regular.ttf'); } 
 
 body {
@@ -15,23 +14,6 @@ body {
   z-index: 1;
 } 
 
-/*
-.barcodeContainer {
-  position: relative; 
-  cursor: grab;
-	cursor: -webkit-grab;
-  top: 50px; 
-  left: 106px; 
-  width: 217px;
-  height: 55px;
-  border: .5px solid rgb(0, 0, 0);
-  background-color: white;
-  border-radius: 0px;
-  z-index: 2;
-  padding: 10px, 10px, 0px, 10px;
-}
-*/
-
 .barcode { 
   position: relative;
   cursor: grab;
@@ -39,7 +21,7 @@ body {
 /*  font-family: BarCode; 
   font-size: 45px;
   line-height: 100%; */
-  width: 225px;
+  width: 280px;
   height: 55px;
   top: -120px;
   left: 80px;
@@ -60,6 +42,7 @@ body {
 
 .link {
   position: relative;
+  z-index: 3;
 }
 
 .notes {
@@ -68,4 +51,5 @@ body {
   line-height: 1;
   width: 400px;
   height: 200;
+  z-index: 2;
 }

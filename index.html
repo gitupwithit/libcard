@@ -36,6 +36,8 @@ Card Number: <input type="number" id="cardNumber" value="00000000000000">
       
 </div>
 
+<div> <p style="z-index: 3; font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin-top:-45px">  tip - you can move the barcode</div></p>
+
 <div class="link">
   <button onclick="window.print()" target="_blank">Print this page</button>
  <button type="button" onclick="setBroken()">Click here if this is broken</button></p>
@@ -44,7 +46,7 @@ Card Number: <input type="number" id="cardNumber" value="00000000000000">
 <div class="notes">
   <p>notes:</p>
   <p>v9 (jan 31 2021)</p>
-  <p>- this version uses the <a href="https://github.com/lindell/JsBarcode">jsbarcode library </a> </p>
+  <p>- this version uses the <a href="https://github.com/lindell/JsBarcode" target="_blank">jsbarcode library </a> </p>
   <p> - uses CODE128 style barcodes. libraries are supposed to use Codabar format, but I couldn't get them to scan??</p>
     <p>- to do: uploading images </p>
       <p>- print just the card, not the whole page</p>
@@ -87,13 +89,23 @@ function mouseMove(e) {
   bc.style.top = currentY -370 + 'px';
 }
 
+var element = document.getElementById("barcode2");
+JsBarcode(element, 1234567890123, {
+    format: "CODE128",
+    width:2,
+    height:30,
+    displayValue: false
+    }
+  );
+
+
 function submitCardNumber(){
   var newCardNumber = document.getElementById('cardNumber').value;
   var newCardNumberString = newCardNumber.toString();
   document.getElementById('bcnum').innerHTML = newCardNumberString.slice(0,5);
   document.getElementById('mid').innerHTML = ' '  + newCardNumberString.slice(5,10);
   document.getElementById('bold').innerHTML = ' ' + newCardNumberString.slice(10,14);
-  var element = document.getElementById("barcode2");
+  // var element = document.getElementById("barcode2");
   JsBarcode(element, newCardNumber, {
     format: "CODE128",
     width:2,
