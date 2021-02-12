@@ -16,6 +16,7 @@ body {
 
 .barcode { 
   position: relative;
+  -webkit-overflow scrolling: touch;
   cursor: grab;
 	cursor: -webkit-grab;
 /*  font-family: BarCode; 
