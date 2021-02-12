@@ -37,7 +37,8 @@ body {
 
 .barcode.active {
   cursor: grabbing;
-	cursor: -webkit-grabbing;
+  cursor: -webkit-grabbing;
+  webkit-overflow scrolling: touch;
 }
 
 .link {
