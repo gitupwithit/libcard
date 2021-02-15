@@ -4,11 +4,42 @@ body {
   background-color: white;
 }
 
+#printElement {
+  position: relative; 
+  top: 0px; 
+  left: 0px; 
+  z-index: 1;
+  border-radius: 10px; 
+  z-index: 1;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #section-to-print, #section-to-print * {
+    visibility: visible;
+  }
+  #section-to-print p{
+    width: 332px;
+    height: 206px;
+    font-size: 1em;
+  }
+  #section-to-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
 .cardImage { 
   position: relative; 
   top: 0px; 
   left: 0px; 
   z-index: 1;
+  border-color: black;
+  border-width: 5px;
+  border-style: none;
   border-radius: 10px; 
   z-index: 1;
 } 
@@ -20,7 +51,8 @@ body {
   width: 280px;
   height: 55px;
   top: -70px;
-  left: 30px;
+  left: 20px;
+  border-radius: 4px; 
   text-align: center;
   background-color:white;
   z-index: 3;
@@ -28,6 +60,7 @@ body {
 }
 
 .bc# {
+  text-align: center;
   position: relative;
   z-index: 4;
 }
@@ -47,6 +80,7 @@ body {
   font-size: 13px;
   line-height: 1;
   width: 400px;
-  height: 200;
+  height: 100;
   z-index: 2;
 }
+

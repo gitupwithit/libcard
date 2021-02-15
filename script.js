@@ -1,3 +1,17 @@
+/*
+
+
+
+
+NOT USED
+
+
+
+
+*/
+
+
+
 let clickOnBC = false;
 let currentX;
 let currentY;
@@ -26,8 +40,8 @@ function mouseMove(e) {
   }
   currentX = e.pageX;
   currentY = e.pageY;
-  bc.style.left = currentX - 80 + 'px';
-  bc.style.top = currentY -370 + 'px';
+  bc.style.left = currentX + 'px';
+  bc.style.top = currentY + 'px';
 }
 
 function submitCardNumber(){
@@ -42,6 +56,10 @@ function submitCardNumber(){
 function submitUserImage(userImage) {
   var userImage = document.getElementById("userImage").value;
   document.getElementById("ui").src = userImage;
+}
+
+function submitUserImage2() {
+  alert('image uploaded')
 }
 
 function setBroken() {
