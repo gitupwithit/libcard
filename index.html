@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>Library Card Maker</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
   </head>
 
 <html>
@@ -20,7 +22,7 @@ Your card number: <input type="number" id="cardNumber" value="00000000000000">
   <button type="button" onclick="submitUserImage()">Submit</button>
 </p>
 
-<div class="cardImage">
+<div class="cardImage" id="card">
   <img class="cardImage" id="ui" src="https://static.wikia.nocookie.net/arthur/images/4/47/Arthur_2_Song.jpg" width="322px" height="206px" alt="library card background image"/>
 <!----    <div class="barcodeContainer" id="bcContainer"> -->
       <div class="barcode" id="barcode">
@@ -39,17 +41,18 @@ Your card number: <input type="number" id="cardNumber" value="00000000000000">
 <div> <p style="z-index: 3; font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin-top:-45px">  tip - you can move the barcode</div></p>
 
 <div class="link">
-  <button onclick="window.print()" target="_blank">Print this page</button>
+  <button onclick="h2c()" target="_blank">Print this page</button>
  <button type="button" onclick="setBroken()">Click here if this is broken</button></p>
 </div>
 
 <div class="notes">
   <p>notes:</p>
-  <p>v9 (jan 31 2021)</p>
+  <p>v10 (feb 15 2021)</p>
   <p>- this version uses the <a href="https://github.com/lindell/JsBarcode" target="_blank">jsbarcode library </a> </p>
   <p> - uses CODE128 style barcodes. libraries are supposed to use Codabar format, but I couldn't get them to scan??</p>
-    <p>- to do: uploading images </p>
-      <p>- print just the card, not the whole page</p>
+    <p>to do: uploading images </p>
+    <p>to do: fix ios drag barcode</p>
+      <p>tp do: print just the card, not the whole page</p>
       <p> - if you want to help, get in touch! g9f605++@++hot++mail++dot++calm</p>
 </div>
 
@@ -124,6 +127,19 @@ function setBroken() {
   broken = true;
   window.location = "broken.html"
 }
+
+function h2c() {
+    html2canvas(document.getElementById("card"),{ 
+    logging: true, 
+    letterRendering: 1, 
+    allowTaint: true, 
+    useCORS: false }).then(
+  	function (canvas) {
+    document.body.appendChild(canvas);})
+    var w = window.open('', 'wnd');
+
+w.document.body.appendChild(canvas) ;
+  }
 
 </script>
 
