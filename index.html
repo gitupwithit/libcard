@@ -75,6 +75,7 @@ addEventListener('mousemove', mouseMove);
 window.onload = function() {
   bc.addEventListener('touchmove', function(e) {
   var touch = e.targetTouches[0];
+  e.preventDefault();
   bc.style.left = touch.pageX - 200 + 'px';
   bc.style.top = touch.pageY - 150 + 'px';
    console.log(touch.pageX + ' - ' + touch.pageY);
